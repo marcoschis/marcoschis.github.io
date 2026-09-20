@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="粗口麦词 - 精选热门喊麦歌词、押韵顺口溜与MC喊麦文案合集，提供经典与原创喊麦词库，助你掌握押韵技巧，提升舞台表现力。">
+    <meta name="keywords" content="粗口麦词,喊麦文案,押韵技巧,MC歌词,喊麦词库">
+    <title>粗口麦词-热门喊麦文案与押韵技巧合集</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a017;
+            --primary-hover: #b8860b;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #ffffff;
+            --text-sub: #b0b0b0;
+            --accent-red: #ff4757;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-sub);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/mc/1920/1080') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--primary-color);
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.4);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* 分类导航 */
+        .category-bar {
+            background-color: var(--bg-card);
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 40px;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cat-tag {
+            padding: 8px 20px;
+            border: 1px solid #444;
+            border-radius: 20px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cat-tag:hover, .cat-tag.active {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: rgba(212, 160, 23, 0.1);
+        }
+
+        /* 核心内容区 */
+        .main-content {
+            padding-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 1rem;
+            color: var(--text-sub);
+            font-weight: normal;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        /* 歌词卡片网格 */
+        .lyrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .lyric-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lyric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--primary-color);
+        }
+
+        .card-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #333;
+            color: #aaa;
+        }
+
+        .tag.hot {
+            background-color: rgba(255, 71, 87, 0.2);
+            color: var(--accent-red);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .lyric-text {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: inherit;
+        }
+
+        .card-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .play-btn {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .play-btn:hover {
+            color: var(--primary-hover);
+        }
+
+        .copy-btn {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            cursor: pointer;
+            border: 1px solid #444;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        .copy-btn:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        /* 押韵技巧板块 */
+        .skills-section {
+            background-color: #181818;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .skill-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .skill-item p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .skill-example {
+            background-color: #000;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px dashed #444;
+        }
+
+        .skill-example h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .rhyme-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .rhyme-line {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0 20px;
+            border-top: 1px solid #333;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .rhyme-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🎤</span> 粗口麦词
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">押韵技巧</a></li>
+                    <li><a href="#">原创投稿</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>释放你的舞台魅力<br>掌握最炫粗口麦词</h1>
+            <p>汇集全网最热门、最押韵的喊麦文案，从经典老歌到最新流行，助你成为麦霸，掌控全场节奏。</p>
+            <a href="#latest" class="cta-btn">立即浏览词库</a>
+        </div>
+    </section>
+
+    <section class="category-bar">
+        <div class="container">
+            <div class="category-list">
+                <div class="cat-tag active">全部</div>
+                <div class="cat-tag">霸气霸气</div>
+                <div class="cat-tag">伤感伤感</div>
+                <div class="cat-tag">高冷高冷</div>
+                <div class="cat-tag">江湖江湖</div>
+                <div class="cat-tag">爱情爱情</div>
+                <div class="cat-tag">搞笑搞笑</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content" id="latest">
+        
+        <!-- 热门推荐板块 -->
+        <section>
+            <div class="section-title">
+                <h2>🔥 热门推荐</h2>
+                <span>近期最受欢迎的麦词</span>
+            </div>
+            <div class="lyrics-grid">
+                <!-- 卡片 1 -->
+                <article class="lyric-card">
+                    <div class="card-header">
+                        <span class="card-title">《万古神帝》- 霸气版</span>
+                        <span class="tag hot">HOT</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="lyric-text">万古神帝，谁与争锋。天若阻我，我便逆天！手握日月摘星辰，世间无我这般人。踏破凌霄，放肆桀骜！</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="play-btn">▶ 播放试听</span>
+                        <span class="copy-btn">复制</span>
+                    </div>
+                </article>
+
+                <!-- 卡片 2 -->
+                <article class="lyric-card">
+                    <div class="card-header">
+                        <span class="card-title">《一人饮酒醉》- 经典重制</span>
+                        <span class="tag">经典</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="lyric-text">一人饮酒醉，醉把佳人成双对。两眼是相随，只求今生共醉。今朝有酒今朝醉，莫使金樽空对月。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="play-btn">▶ 播放试听</span>
+                        <span class="copy-btn">复制</span>
+                    </div>
+                </article>
+
+                <!-- 卡片 3 -->
+                <article class="lyric-card">
+                    <div class="card-header">
+                        <span class="card-title">《败类》- 霸气演绎</span>
+                        <span class="tag hot">HOT</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="lyric-text">我这一生，犯过错，爱过人，也恨过人。在江湖的边缘，我看到了自己的败类，但我依然要站得直，行得正。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="play-btn">▶ 播放试听</span>
+                        <span class="copy-btn">复制</span>
+                    </div>
+                </article>
+
+                <!-- 卡片 4 -->
+                <article class="lyric-card">
+                    <div class="card-header">
+                        <span class="card-title">《万丈深渊》- 悲伤</span>
+                        <span class="tag">悲伤</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="lyric-text">万丈深渊，下不去。回过头，只有你。我的心，像死灰。这一场戏，散了。散了...</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="play-btn">▶ 播放试听</span>
+                        <span class="copy-btn">复制</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 押韵技巧板块 -->
+        <section class="skills-section">
+            <div class="container skills-container">
+                <div class="skill-list">
+                    <div class="section-title" style="margin-bottom: 20px; border-left-color: var(--accent-red);">
+                        <h2 style="margin:0;">💡 喊麦押韵技巧</h2>
+                        <span style="font-size: 0.9rem; color: #888;">如何写出更顺口的麦词</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <h3>1. 押韵技巧：单押与双押</h3>
+                        <p>单押是基础，选择韵母相同的字进行组合，如“天、颜、仙”。双押则增加节奏感，如“梦想、疯狂、称王”，注意声调的起伏。</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <h3>2. 节奏控制：四字与七字</h3>
+                        <p>标准的喊麦节奏通常以四字短语为主，注意重音的落点。四字句式如“天若阻我，我便逆天”，七字句式则更注重叙事连贯性。</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <h3>3. 情感表达：情绪渲染</h3>
+                        <p>麦词不仅仅是文字的堆砌，更要配合语气和情感。霸气类麦词需要重音突出，悲伤类则要拖长音调，营造氛围。</p>
+                    </div>
+                </div>
+
+                <div class="skill-example">
+                    <h3>🎵 押韵范例：ang韵脚</h3>
+                    <div class="rhyme-box">
+                        <div class="rhyme-line">天若阻我，我便称王</div>
+                        <div class="rhyme-line">手握日月，摘取星辰</div>
+                        <div class="rhyme-line">放荡不羁，逍遥一生</div>
+                        <div class="rhyme-line">万古神帝，唯我独尊</div>
+                        <div class="rhyme-line">披荆斩棘，势不可挡</div>
+                        <div class="rhyme-line">狂妄自大，也是天命</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类展示板块 -->
+        <section>
+            <div class="section-title">
+                <h2>📂 分类浏览</h2>
+                <span>按风格查找你喜欢的麦词</span>
+            </div>
+            <div class="lyrics-grid">
+                <article class="lyric-card">
+                    <div class="card-header">
+                        <span class="card-title">江湖豪情</span>
+                        <span class="tag">江湖</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="lyric-text">江湖路远，恩怨情仇。刀光剑影，快意恩仇。我是江湖的浪子，也是你的过客。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="play-btn">查看更多</span>
+                    </div>
+                </article>
+                <article class="lyric-card">
+                    <div class="card-header">
+                        <span class="card-title">都市夜归</span>
+                        <span class="tag">都市</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="lyric-text">城市的霓虹灯，照亮了我的孤独。深夜的酒，比白天更烈。我在这里等你，哪怕天荒地老。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="play-btn">查看更多</span>
+                    </div>
+                </article>
+                <article class="lyric-card">
+                    <div class="card-header">
+                        <span class="card-title">古风古韵</span>
+                        <span class="tag">古风</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="lyric-text">墨染江山，画不成你容颜。琴瑟和鸣，奏不出那曲终人散。红尘陌上，独自行走。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="play-btn">查看更多</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">霸气麦词</a></li>
+                        <li><a href="#">伤感麦词</a></li>
+                        <li><a href="#">搞笑段子</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>使用指南</h4>
+                    <ul>
+                        <li><a href="#">如何开始喊麦</a></li>
+                        <li><a href="#">设备推荐</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 粗口麦词网 - 专注优质喊麦文案分享. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互逻辑：复制功能与分类切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyBtns = document.querySelectorAll('.copy-btn');
+            const catTags = document.querySelectorAll('.cat-tag');
+
+            // 复制文本功能
+            copyBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const textContent = this.closest('.lyric-card').querySelector('.lyric-text').innerText;
+                    navigator.clipboard.writeText(textContent).then(() => {
+                        const originalText = this.innerText;
+                        this.innerText = '已复制!';
+                        this.style.color = '#4cd137';
+                        this.style.borderColor = '#4cd137';
+                        
+                        setTimeout(() => {
+                            this.innerText = originalText;
+                            this.style.color = '';
+                            this.style.borderColor = '';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('复制失败:', err);
+                    });
+                });
+            });
+
+            // 分类标签切换效果
+            catTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    catTags.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    // 实际项目中这里会触发数据筛选
+                });
+            });
+
+            // 播放按钮模拟
+            const playBtns = document.querySelectorAll('.play-btn');
+            playBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if(this.innerText.includes('复制')) return;
+                    const originalText = this.innerText;
+                    this.innerText = '正在播放...';
+                    this.style.color = '#4cd137';
+                    
+                    setTimeout(() => {
+                        this.innerText = originalText;
+                        this.style.color = '';
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
