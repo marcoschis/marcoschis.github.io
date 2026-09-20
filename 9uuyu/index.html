@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="9uu域名更新自动转跳指南。本文提供9uu平台域名变更的详细说明、自动跳转设置方法、DNS配置教程及常见跳转错误排查步骤，帮助用户快速恢复访问。">
+    <meta name="keywords" content="9uu域名更新自动转跳,9uu跳转设置,DNS域名配置,网站301重定向,9uu访问教程">
+    <title>9uu域名更新自动转跳-9uu平台访问恢复与配置指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --accent-color: #00a8e8;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f4f6f9;
+            --bg-card: #ffffff;
+            --border-color: #e1e4e8;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Article Section */
+        .article-section {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .article-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .article-section h3 {
+            font-size: 1.25rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .article-section p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .article-section ul, .article-section ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: var(--text-secondary);
+        }
+
+        .article-section li {
+            margin-bottom: 8px;
+        }
+
+        .article-section strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Code Block */
+        .code-block {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 16px 0;
+            position: relative;
+        }
+
+        .code-label {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 12px;
+            color: #5c6370;
+            text-transform: uppercase;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .status-list {
+            list-style: none;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .status-icon {
+            color: #28a745;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .status-item.warning .status-icon {
+            color: #ffc107;
+        }
+
+        .status-item.error .status-icon {
+            color: #dc3545;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 40px;
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none;
+            padding-top: 8px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content p {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                <span>9uu配置中心</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">域名跳转</a>
+                <a href="#">DNS管理</a>
+                <a href="#">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>9uu域名更新自动转跳</h1>
+            <p>解决9uu平台域名变更导致的访问中断问题，提供自动跳转配置教程、DNS解析设置及SSL证书更新指南。</p>
+        </div>
+    </section>
+
+    <div class="container main-content">
+        <!-- Left Column: Main Article -->
+        <article class="article-section">
+            <h2>什么是9uu域名更新自动转跳？</h2>
+            <p>当9uu平台更换服务器或域名时，为了确保用户能够无感知地访问到新地址，通常需要在服务器端或DNS层面配置<strong>自动转跳</strong>机制。这不仅能提升用户体验，还能避免搜索引擎将新旧域名视为重复内容，从而影响SEO排名。</p>
+            
+            <h3>为什么要配置自动转跳？</h3>
+            <p>如果您发现直接访问旧域名提示“找不到页面”或“连接超时”，这通常意味着9uu正在进行域名迁移。此时，配置自动转跳是恢复服务的关键步骤。</p>
+
+            <h3>方法一：Nginx 服务器配置自动跳转</h3>
+            <p>如果您拥有服务器管理权限，通过修改Nginx配置文件是最直接的方法。</p>
+            <ol>
+                <li>登录您的服务器控制台（如宝塔面板、SSH终端）。</li>
+                <li>找到并编辑Nginx的配置文件（通常在 <code>/etc/nginx/conf.d/</code> 或 <code>/usr/local/nginx/conf/vhost/</code> 目录下）。</li>
+                <li>在服务器块中添加以下代码：</li>
+            </ol>
+            <div class="code-block">
+                <span class="code-label">Nginx Config</span>
+                server {
+                    listen 80;
+                    server_name old.9uu.com;  <!-- 替换为9uu旧域名 -->
+                    return 301 https://www.9uu.com$request_uri;  <!-- 替换为新域名及协议 -->
+                }
+            </div>
+            <p><strong>注意：</strong> <code>301</code> 代表永久重定向，搜索引擎会逐渐将权重转移到新域名。</p>
+
+            <h3>方法二：DNS A记录自动跳转（适用于9uu官方配置）</h3>
+            <p>如果无法修改服务器配置，可以检查DNS服务商提供的记录类型。部分DNS管理面板支持“CNAME记录”或“转发规则”。</p>
+            <ul>
+                <li><strong>CNAME记录：</strong> 将旧域名的A记录指向新域名的CNAME记录。</li>
+                <li><strong>URL转发：</strong> 在DNS服务商后台（如阿里云、腾讯云）开启“URL转发”功能，输入新域名，并选择“302临时跳转”或“301永久跳转”。</li>
+            </ul>
+
+            <h3>9uu平台访问恢复步骤</h3>
+            <ol>
+                <li><strong>确认新域名：</strong> 登录9uu后台或查看官方公告，获取新的官方访问地址。</li>
+                <li><strong>清理浏览器缓存：</strong> 由于DNS缓存的存在，有时需要清除本地缓存或使用隐私模式访问。</li>
+                <li><strong>检查SSL证书：</strong> 确保新域名已安装有效的SSL证书（HTTPS），避免浏览器提示“不安全”。</li>
+            </ol>
+
+            <div class="faq-section">
+                <h2>常见问题 (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">配置了自动转跳后多久生效？</div>
+                    <div class="faq-answer">DNS记录的生效通常需要全球传播，最快几分钟，最慢可能需要24小时。Nginx配置修改后，通常需要重载服务（如 <code>nginx -s reload</code>）即可立即生效。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">旧域名跳转后，收录的旧页面会丢失吗？</div>
+                    <div class="faq-answer">使用301重定向可以将旧域名的权重尽可能转移到新域名。只要正确配置了转跳，搜索引擎通常会逐步更新索引，将旧页面指向新页面。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如何判断9uu是否已经完成了域名更新？</div>
+                    <div class="faq-answer">请访问9uu官方认证渠道（如官方微博、微信公众号）发布的公告。如果官方已发布新域名，但旧域名仍无法访问，则说明跳转配置可能尚未生效或存在配置错误。</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Right Column: Sidebar -->
+        <aside>
+            <div class="sidebar-card">
+                <h3>当前状态监控</h3>
+                <ul class="status-list">
+                    <li class="status-item">
+                        <span class="status-icon">✓</span>
+                        <div>
+                            <strong>9uu主站</strong><br>
+                            <span>域名已更新，建议立即配置跳转。</span>
+                        </div>
+                    </li>
+                    <li class="status-item warning">
+                        <span class="status-icon">!</span>
+                        <div>
+                            <strong>DNS传播</strong><br>
+                            <span>部分区域可能存在解析延迟。</span>
+                        </div>
+                    </li>
+                    <li class="status-item">
+                        <span class="status-icon">✓</span>
+                        <div>
+                            <strong>SSL证书</strong><br>
+                            <span>新域名HTTPS已部署。</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>相关工具推荐</h3>
+                <ul class="status-list">
+                    <li><a href="#">在线DNS检测工具</a></li>
+                    <li><a href="#">Nginx配置生成器</a></li>
+                    <li><a href="#">HTTP状态码查询</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>本页面为9uu域名更新自动转跳技术指南，旨在帮助用户解决访问问题。</p>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">联系客服</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 12px;">&copy; 2023 9uu技术支持中心. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
