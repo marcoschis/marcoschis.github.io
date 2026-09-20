@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="梦比优斯奥特曼国语全集观看平台，提供梦比优斯奥特曼高清国语配音资源、角色介绍、剧情解析及观看指南。收录经典特摄剧集，重温光之巨人的成长之路。">
+    <meta name="keywords" content="梦比优斯奥特曼国语,梦比优斯,奥特曼国语版,梦比优斯在线观看,特摄剧集">
+    <title>梦比优斯奥特曼国语-经典特摄全集与观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00bcd4;
+            --primary-dark: #008ba3;
+            --accent-color: #ff9800;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #eee;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/ultraman_hero/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Video List Section */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            transition: transform 0.2s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .video-thumb {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .video-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 188, 212, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
+        }
+
+        .play-icon::after {
+            content: '';
+            width: 0; 
+            height: 0; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 18px solid #fff;
+            margin-left: 4px;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .tag {
+            background: #e0f7fa;
+            color: #006064;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .video-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .character-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            cursor: pointer;
+        }
+
+        .character-list li:last-child {
+            border-bottom: none;
+        }
+
+        .character-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+            object-fit: cover;
+        }
+
+        .character-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Character Highlights */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .char-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .char-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .char-card h4 {
+            padding: 15px 10px 5px;
+            font-size: 16px;
+        }
+
+        .char-card p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            padding: 0 10px 15px;
+        }
+
+        /* Info & FAQ */
+        .info-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container nav {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .nav-container nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>⚡</span> 梦比优斯国语站
+            </a>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">全集目录</a></li>
+                    <li><a href="#">角色图鉴</a></li>
+                    <li><a href="#">剧场版</a></li>
+                    <li><a href="#">观看指南</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>梦比优斯奥特曼国语</h1>
+                <p>传承光之意志，集结五位前辈的力量。在这里观看高清国语配音版全集，重温特摄经典。</p>
+                <div>
+                    <a href="#latest" class="btn btn-primary">立即观看</a>
+                    <a href="#intro" class="btn btn-outline">了解剧情</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="main-layout">
+                <!-- Main Content: Video List -->
+                <div class="content-area">
+                    <section id="latest">
+                        <div class="section-title">
+                            <span>最新更新</span>
+                            <a href="#" style="font-size: 14px; color: var(--primary-color);">查看全部 ></a>
+                        </div>
+
+                        <article class="video-card">
+                            <div class="video-thumb">
+                                <img src="https://picsum.photos/seed/ultraman_1/800/450.jpg" alt="梦比优斯奥特曼国语第1集">
+                                <div class="play-icon"></div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-meta">
+                                    <span class="tag">国语配音</span>
+                                    <span>第1集：初战</span>
+                                    <span>24:35</span>
+                                </div>
+                                <h2 class="video-title">梦比优斯奥特曼国语全集 - 第1集：光之继承者</h2>
+                                <p class="video-desc">为了寻找能够继承光之遗产的战士，宇宙警备队队长乡秀树来到了地球。在这里，他遇到了年轻而热血的圆大古...</p>
+                            </div>
+                        </article>
+
+                        <article class="video-card">
+                            <div class="video-thumb">
+                                <img src="https://picsum.photos/seed/ultraman_2/800/450.jpg" alt="梦比优斯奥特曼国语第2集">
+                                <div class="play-icon"></div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-meta">
+                                    <span class="tag">国语配音</span>
+                                    <span>第2集：初阵</span>
+                                    <span>24:20</span>
+                                </div>
+                                <h2 class="video-title">梦比优斯奥特曼国语全集 - 第2集：圆大古变身</h2>
+                                <p class="video-desc">面对突然袭击的贝利亚军团先锋，圆大古在千钧一发之际觉醒了体内的光，化身为梦比优斯奥特曼与怪兽展开激战。</p>
+                            </div>
+                        </article>
+
+                        <article class="video-card">
+                            <div class="video-thumb">
+                                <img src="https://picsum.photos/seed/ultraman_3/800/450.jpg" alt="梦比优斯奥特曼国语第3集">
+                                <div class="play-icon"></div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-meta">
+                                    <span class="tag">国语配音</span>
+                                    <span>第3集：集结</span>
+                                    <span>24:15</span>
+                                </div>
+                                <h2 class="video-title">梦比优斯奥特曼国语全集 - 第3集：前辈们的力量</h2>
+                                <p class="video-desc">梦比优斯奥特曼在战斗中领悟到了前辈们所留下的光芒真谛，开始学习如何更好地运用这股力量。</p>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- More Episodes Placeholder -->
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="#" class="btn btn-primary" style="background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color);">加载更多剧集</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">角色图鉴</h3>
+                        <ul class="character-list">
+                            <li>
+                                <img src="https://picsum.photos/seed/hikari/100/100.jpg" alt="梦比优斯" class="character-avatar">
+                                <span class="character-name">梦比优斯</span>
+                            </li>
+                            <li>
+                                <img src="https://picsum.photos/seed/hiroshi/100/100.jpg" alt="乡秀树" class="character-avatar">
+                                <span class="character-name">乡秀树</span>
+                            </li>
+                            <li>
+                                <img src="https://picsum.photos/seed/momoe/100/100.jpg" alt="日比野未来" class="character-avatar">
+                                <span class="character-name">日比野未来</span>
+                            </li>
+                            <li>
+                                <img src="https://picsum.photos/seed/zenon/100/100.jpg" alt="赛文" class="character-avatar">
+                                <span class="character-name">赛文奥特曼</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">热门剧场版</h3>
+                        <ul class="character-list">
+                            <li>
+                                <span class="character-name">梦比优斯与奥特兄弟</span>
+                            </li>
+                            <li>
+                                <span class="character-name">超银河传说 THE MOVIE</span>
+                            </li>
+                            <li>
+                                <span class="character-name">梦比优斯奥特曼 最终章</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Character Highlights Section -->
+        <section class="container">
+            <div class="section-title">
+                <span>主要角色</span>
+            </div>
+            <div class="character-grid">
+                <div class="char-card">
+                    <img src="https://picsum.photos/seed/ultraman_hibino/300/400.jpg" alt="圆大古">
+                    <h4>圆大古</h4>
+                    <p>主人公，来自M78星云光之国的光之继承者，性格温柔善良。</p>
+                </div>
+                <div class="char-card">
+                    <img src="https://picsum.photos/seed/ultraman_zenon/300/400.jpg" alt="赛文">
+                    <h4>赛文</h4>
+                    <p>圆大古的导师，拥有极高的战斗技巧和正义感。</p>
+                </div>
+                <div class="char-card">
+                    <img src="https://picsum.photos/seed/ultraman_jin/300/400.jpg" alt="迪迦">
+                    <h4>迪迦奥特曼</h4>
+                    <p>来自过去的战士，在关键时刻给予梦比优斯重要指引。</p>
+                </div>
+                <div class="char-card">
+                    <img src="https://picsum.photos/seed/ultraman_zero/300/400.jpg" alt="泽塔">
+                    <h4>泽塔奥特曼</h4>
+                    <p>新一代的奥特战士，在后续作品中与梦比优斯有联动。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info & FAQ Section -->
+        <section id="intro" class="container">
+            <div class="info-section">
+                <div class="section-title">观看指南与剧情简介</div>
+                <div class="info-grid">
+                    <div>
+                        <h3 style="margin-bottom: 15px; color: var(--text-main);">关于《梦比优斯奥特曼》</h3>
+                        <p style="margin-bottom: 15px; color: var(--text-secondary);">
+                            《梦比优斯奥特曼》是圆谷制作公司出品的特摄电视剧，于2006年播出，作为昭和系奥特曼系列的完结作。故事背景设定在昭和系奥特曼活跃的年代，讲述了来自未来的奥特战士日比野未来（即梦比优斯）穿越时空回到过去，与昭和系的五位前辈（初代、赛文、杰克、艾斯、泰罗）并肩作战的故事。
+                        </p>
+                        <p style="color: var(--text-secondary);">
+                            本剧强调“光之传承”的主题，讲述了圆大古如何从一名普通人类成长为能够独当一面的奥特战士，同时也展现了昭和系奥特曼与新一代之间的代沟与融合。
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 15px; color: var(--text-main);">常见问题 (FAQ)</h3>
+                        <div class="faq-item">
+                            <div class="faq-question">梦比优斯奥特曼国语配音在哪里看？</div>
+                            <div class="faq-answer">本站提供高清国语配音版的在线观看服务，支持手机和电脑端流畅播放。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">《梦比优斯奥特曼》一共有多少集？</div>
+                            <div class="faq-answer">全52集，加上两部剧场版，是昭和系奥特曼系列集数最长的一部作品。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">国语配音版是哪里引进的？</div>
+                            <div class="faq-answer">本站提供的资源为官方引进的正版国语配音版本。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>梦比优斯国语站</h3>
+                    <p>致力于为特摄爱好者提供最优质的梦比优斯奥特曼国语观看体验。汇聚经典，传承光芒。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">全集列表</a></li>
+                        <li><a href="#">角色介绍</a></li>
+                        <li><a href="#">剧场版专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>相关链接</h3>
+                    <ul>
+                        <li><a href="#">圆谷制作官网</a></li>
+                        <li><a href="#">奥特曼系列百科</a></li>
+                        <li><a href="#">特摄爱好者社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 梦比优斯奥特曼国语站. All Rights Reserved. 本站仅提供资源展示，版权归原作者所有。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Simple interaction for play buttons (simulation)
+        document.querySelectorAll('.play-icon').forEach(icon => {
+            icon.parentElement.addEventListener('click', function() {
+                // In a real scenario, this would open a video player modal or redirect
+                const card = this.closest('.video-card');
+                const title = card.querySelector('.video-title').innerText;
+                console.log("播放视频: " + title);
+                // Visual feedback
+                this.style.transform = "translate(-50%, -50%) scale(1.2)";
+                setTimeout(() => {
+                    this.style.transform = "translate(-50%, -50%) scale(1)";
+                }, 200);
+            });
+        });
+    </script>
+</body>
+                                                     </html>
