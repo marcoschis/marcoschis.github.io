@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鱼儿论坛 - 水族爱好者交流与养鱼知识分享平台</title>
+    <meta name="description" content="鱼儿论坛是专业的水族宠物交流社区，提供热带鱼饲养、水草造景、鱼缸过滤设备讨论及养殖经验分享。加入我们，与万千鱼友共同探讨养鱼乐趣。">
+    <meta name="keywords" content="鱼儿论坛, 水族论坛, 养鱼知识, 热带鱼, 鱼缸造景, 水草, 鱼友交流">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0e7c7c;
+            --primary-dark: #065f5f;
+            --accent-color: #e6a23c;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a.active, .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(14, 124, 124, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1abc9c 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr 300px;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .category-title {
+            padding: 15px 20px;
+            background-color: #fafafa;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .category-list li {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .category-list a:hover {
+            background-color: #f0fdfc;
+            color: var(--primary-color);
+        }
+
+        .category-list .count {
+            background-color: #e0f2f1;
+            color: var(--primary-dark);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        /* Main Content */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 20px;
+        }
+
+        .tab {
+            padding-bottom: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-size: 14px;
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Topic Cards */
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .topic-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+            display: flex;
+            gap: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .topic-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .topic-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .topic-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .topic-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tag {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            background-color: #f0f0f0;
+            color: #666;
+        }
+
+        .tag.hot { background-color: #fee; color: #c00; }
+        .tag.new { background-color: #e6f7ff; color: #1890ff; }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+
+        .widget-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background-color: #ff4d4f; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #ff7a45; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #ffc53d; }
+
+        .rank-link {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+
+        .hot-topic-item {
+            margin-bottom: 15px;
+        }
+
+        .hot-topic-item a {
+            font-size: 14px;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .hot-topic-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-topic-item .sub-info {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2b2b;
+            color: #ccc;
+            padding: 60px 0 30px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 200px 1fr;
+            }
+            .sidebar-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-left {
+                display: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                🐟 鱼儿论坛 <span>Yú'er BBS</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">新手入门</a>
+                <a href="#">热带鱼区</a>
+                <a href="#">水草造景</a>
+                <a href="#">设备讨论</a>
+                <a href="#">水族商城</a>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>探索水族世界的无限乐趣</h1>
+                <p>鱼儿论坛致力于为全球水族爱好者提供最专业的交流平台。从热带鱼饲养技巧到专业水草造景设计，这里是您解决养鱼难题、分享养鱼快乐的理想社区。</p>
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" class="btn btn-primary">浏览最新帖子</a>
+                    <a href="#" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: white;">新手指南</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>50w+</h3>
+                    <p>注册会员</p>
+                </div>
+                <div class="stat-item">
+                    <h3>120w+</h3>
+                    <p>技术贴数</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10w+</h3>
+                    <p>活跃鱼友</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="main-layout">
+            <!-- Left Sidebar -->
+            <aside class="sidebar-left">
+                <div class="category-card">
+                    <div class="category-title">热门版块</div>
+                    <ul class="category-list">
+                        <li><a href="#">🐟 热带鱼饲养 <span class="count">1.2w</span></a></li>
+                        <li><a href="#">🌿 水草造景 <span class="count">8.5k</span></a></li>
+                        <li><a href="#">🦐 软体生物 <span class="count">5.2k</span></a></li>
+                        <li><a href="#">⚙️ 水族设备 <span class="count">3.1k</span></a></li>
+                        <li><a href="#">💊 疾病防治 <span class="count">9.8k</span></a></li>
+                        <li><a href="#">📸 摄影作品 <span class="count">4.5k</span></a></li>
+                        <li><a href="#">🐟 淡水观赏鱼 <span class="count">6.7k</span></a></li>
+                        <li><a href="#">🦈 海水/异宠 <span class="count">2.3k</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-title">最新活动</div>
+                    <ul class="category-list">
+                        <li><a href="#">春季开缸大赛报名中</a></li>
+                        <li><a href="#">水草论坛年度评选</a></li>
+                        <li><a href="#">线下鱼友聚会通知</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <section class="content-area">
+                <div class="section-header">
+                    <h2 class="section-title">最新话题</h2>
+                    <div class="tabs">
+                        <span class="tab active">综合</span>
+                        <span class="tab">最新</span>
+                        <span class="tab">精华</span>
+                    </div>
+                </div>
+
+                <div class="topic-list">
+                    <!-- Topic 1 -->
+                    <article class="topic-card">
+                        <div class="topic-avatar">
+                            <img src="https://picsum.photos/seed/fish1/100/100" alt="User Avatar">
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title"><a href="#">求助：新买的七彩神仙鱼入缸后趴缸不吃食，求大神指点！</a></h3>
+                            <p class="topic-excerpt">刚把鱼带回家两天了，一直在缸底趴着不动，偶尔翻个身。水质已经调整好了，温度28度，ph6.8，大家看看是不是有病了？</p>
+                            <div class="topic-meta">
+                                <span class="meta-item">👤 养鱼新手</span>
+                                <span class="meta-item">🕒 2小时前</span>
+                                <span class="meta-item">💬 45 回复</span>
+                                <span class="tag hot">求助</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Topic 2 -->
+                    <article class="topic-card">
+                        <div class="topic-avatar">
+                            <img src="https://picsum.photos/seed/fish2/100/100" alt="User Avatar">
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title"><a href="#">【作品分享】60cm超白缸草缸造景，莫斯与水榕的搭配</a></h3>
+                            <p class="topic-excerpt">历时一个月，终于完成了这个作品。底床用了ADA泥，灯光用了飞利浦的6066，CO2系统正常运作中。大家觉得怎么样？</p>
+                            <div class="topic-meta">
+                                <span class="meta-item">👤 造景大师</span>
+                                <span class="meta-item">🕒 5小时前</span>
+                                <span class="meta-item">💬 128 回复</span>
+                                <span class="tag new">作品</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Topic 3 -->
+                    <article class="topic-card">
+                        <div class="topic-avatar">
+                            <img src="https://picsum.photos/seed/fish3/100/100" alt="User Avatar">
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title"><a href="#">讨论：鱼缸过滤系统怎么选？上滤、背滤还是底滤？</a></h3>
+                            <p class="topic-excerpt">最近想换个缸，但是对过滤系统很纠结。家里空间有限，主要是养鹦鹉鱼和地图鱼，请问各位大佬推荐哪种过滤方式比较好？</p>
+                            <div class="topic-meta">
+                                <span class="meta-item">👤 钓鱼佬</span>
+                                <span class="meta-item">🕒 昨天</span>
+                                <span class="meta-item">💬 89 回复</span>
+                                <span class="tag">讨论</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Topic 4 -->
+                    <article class="topic-card">
+                        <div class="topic-avatar">
+                            <img src="https://picsum.photos/seed/fish4/100/100" alt="User Avatar">
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title"><a href="#">【团购】XX品牌鱼食/设备 会员专属折扣，手慢无</a></h3>
+                            <p class="topic-excerpt">应广大鱼友要求，我们联系了厂家，拿到了一批品质保证的鱼食，价格比某宝便宜很多，且支持假一赔十。需要的进群报名。</p>
+                            <div class="topic-meta">
+                                <span class="meta-item">👤 商城管理员</span>
+                                <span class="meta-item">🕒 昨天</span>
+                                <span class="meta-item">💬 230 回复</span>
+                                <span class="tag hot">优惠</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Topic 5 -->
+                    <article class="topic-card">
+                        <div class="topic-avatar">
+                            <img src="https://picsum.photos/seed/fish5/100/100" alt="User Avatar">
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title"><a href="#">记录：从裸缸到满缸草景的蜕变过程（附图）</a></h3>
+                            <p class="topic-excerpt">分享一下我养鱼这几年的心得，特别是关于水草种植和灯光搭配的经验。很多新手容易忽视灯光的重要性，其实灯光才是植物生长的关键。</p>
+                            <div class="topic-meta">
+                                <span class="meta-item">👤 水草爱好者</span>
+                                <span class="meta-item">🕒 2天前</span>
+                                <span class="meta-item">💬 67 回复</span>
+                                <span class="tag new">经验</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="btn btn-outline" style="display: inline-block;">加载更多话题</a>
+                </div>
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-right">
+                <div class="widget">
+                    <div class="widget-title">版块排行</div>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num">1</span>
+                            <a href="#" class="rank-link">求助：孔雀鱼繁殖出现白点病怎么办？</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">2</span>
+                            <a href="#" class="rank-link">新手必看：养鱼前需要准备哪些基础设备？</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">3</span>
+                            <a href="#" class="rank-link">分享：我的30cm小缸缸景，简洁大方</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <a href="#" class="rank-link">求助：硝化细菌的培养方法详解</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <a href="#" class="rank-link">讨论：哪种鱼缸过滤效果最好？</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-title">热门标签</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <a href="#" class="tag" style="background:#e6f7ff; color:#1890ff;">水草造景</a>
+                        <a href="#" class="tag" style="background:#fff7e6; color:#fa8c16;">七彩神仙</a>
+                        <a href="#" class="tag" style="background:#f6ffed; color:#52c41a;">过滤系统</a>
+                        <a href="#" class="tag" style="background:#fff1f0; color:#f5222d;">白点病</a>
+                        <a href="#" class="tag" style="background:#f9f0ff; color:#722ed1;">硝化细菌</a>
+                        <a href="#" class="tag" style="background:#fff0f6; color:#eb2f96;">ADA泥</a>
+                    </div>
+                </div>
+
+                <div class="widget" style="background: linear-gradient(to right, #0e7c7c, #1abc9c); color: white;">
+                    <div class="widget-title" style="color: white; border-color: rgba(255,255,255,0.2);">加入鱼友群</div>
+                    <p style="font-size: 13px; margin-bottom: 15px; opacity: 0.9;">添加管理员微信，拉你进同城养鱼交流群，定期有红包雨。</p>
+                    <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 4px; font-size: 14px; font-weight: bold;">
+                        WeChat ID: YuerBBS888
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于鱼儿论坛</h4>
+                    <p style="font-size: 14px; line-height: 1.8; color: #999;">
+                        鱼儿论坛是国内领先的水族宠物爱好者社区，致力于为用户提供专业的养鱼知识、设备选购指南和互动交流平台。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">网站首页</a></li>
+                        <li><a href="#">会员注册</a></li>
+                        <li><a href="#">发布新帖</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>版块导航</h4>
+                    <ul>
+                        <li><a href="#">热带鱼专区</a></li>
+                        <li><a href="#">水草造景</a></li>
+                        <li><a href="#">设备讨论</a></li>
+                        <li><a href="#">水族商城</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">广告投放</a></li>
+                        <li><a href="#">举报投诉</a></li>
+                        <li>邮箱：contact@yuerbbs.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 鱼儿论坛 版权所有 | 仅供演示使用</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
