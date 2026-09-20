@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都楼盘-全城优选置业指南与购房攻略</title>
+    <meta name="description" content="本站提供最新花都楼盘信息，涵盖新盘动态、二手房价格、区域规划及购房政策解读，助您轻松找到心仪的理想家园。">
+    <meta name="keywords" content="花都楼盘, 广州花都买房, 花都新房, 花都二手房, 花都房价, 花都房产">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f39c12;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .header-actions button:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 0 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-bar button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* 统计数据栏 */
+        .stats-bar {
+            background: var(--white);
+            margin-top: -30px;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-item .label {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* 主体内容 */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* 热门楼盘网格 */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 86, 179, 0.9);
+            color: var(--white);
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .card-price {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .price-label {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .price-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+
+        .price-unit {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* 区域板块 */
+        .districts-section {
+            background-color: var(--white);
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .district-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .district-card {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid #e1e1e1;
+            transition: all 0.3s;
+        }
+
+        .district-card:hover {
+            border-color: var(--primary-color);
+            background-color: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .district-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .district-info {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .district-info li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .district-info li::before {
+            content: '•';
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+
+        /* 购房指南 */
+        .guide-section {
+            padding: 40px 0;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .guide-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .guide-text h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .guide-text p {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .guide-arrow {
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .district-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>花都房产网</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">新盘推荐</a></li>
+                    <li><a href="#">二手房</a></li>
+                    <li><a href="#">房价走势</a></li>
+                    <li><a href="#">购房指南</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button>登录 / 注册</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>发现理想家园</h1>
+            <p>专业提供花都楼盘信息、区域分析及购房服务</p>
+            <div class="search-bar">
+                <input type="text" placeholder="输入楼盘名称、区域或关键词...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="number">1,240+</span>
+                <span class="label">在售楼盘</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">85,000+</span>
+                <span class="label">二手房房源</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">12</span>
+                <span class="label">热门板块</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">98%</span>
+                <span class="label">业主好评</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门花都楼盘</h2>
+                <a href="#" class="section-more">查看全部 &gt;</a>
+            </div>
+            
+            <div class="grid-layout">
+                <!-- 楼盘卡片 1 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="tag">新盘</span>
+                        <img src="https://picsum.photos/seed/huadu1/400/300" alt="花都碧桂园">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">花都碧桂园凤凰城</h3>
+                        <div class="card-meta">区域：新华街道 | 类型：住宅 | 楼层：高层</div>
+                        <div class="card-price">
+                            <span class="price-label">均价</span>
+                            <span class="price-value">2.2万</span>
+                            <span class="price-unit">元/㎡</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 楼盘卡片 2 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="tag">热销</span>
+                        <img src="https://picsum.photos/seed/huadu2/400/300" alt="花都融创文旅城">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">花都融创文旅城</h3>
+                        <div class="card-meta">区域：花东镇 | 类型：文旅/住宅 | 楼层：洋房</div>
+                        <div class="card-price">
+                            <span class="price-label">均价</span>
+                            <span class="price-value">2.8万</span>
+                            <span class="price-unit">元/㎡</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 楼盘卡片 3 -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/huadu3/400/300" alt="花都保利城">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">花都保利城</h3>
+                        <div class="card-meta">区域：狮岭镇 | 类型：住宅 | 楼层：小高层</div>
+                        <div class="card-price">
+                            <span class="price-label">均价</span>
+                            <span class="price-value">1.9万</span>
+                            <span class="price-unit">元/㎡</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 楼盘卡片 4 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="tag">低价</span>
+                        <img src="https://picsum.photos/seed/huadu4/400/300" alt="花都合景泰富">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">花都合景泰富映山红</h3>
+                        <div class="card-meta">区域：花山镇 | 类型：住宅 | 楼层：低密</div>
+                        <div class="card-price">
+                            <span class="price-label">均价</span>
+                            <span class="price-value">1.5万</span>
+                            <span class="price-unit">元/㎡</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="districts-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">花都热门板块</h2>
+                    <a href="#" class="section-more">更多板块 &gt;</a>
+                </div>
+                <div class="district-grid">
+                    <div class="district-card">
+                        <h3 class="district-name">新华街道</h3>
+                        <ul class="district-info">
+                            <li>花都区政府所在地</li>
+                            <li>商业配套成熟</li>
+                            <li>教育资源丰富</li>
+                        </ul>
+                    </div>
+                    <div class="district-card">
+                        <h3 class="district-name">花东镇</h3>
+                        <ul class="district-info">
+                            <li>空港经济区核心</li>
+                            <li>交通枢纽站点</li>
+                            <li>宜居生态新城</li>
+                        </ul>
+                    </div>
+                    <div class="district-card">
+                        <h3 class="district-name">狮岭镇</h3>
+                        <ul class="district-info">
+                            <li>皮具之都</li>
+                            <li>产业人口密集</li>
+                            <li>生活成本低</li>
+                        </ul>
+                    </div>
+                    <div class="district-card">
+                        <h3 class="district-name">花山镇</h3>
+                        <ul class="district-info">
+                            <li>生态旅游区</li>
+                            <li>环境优美清静</li>
+                            <li>适合养老居住</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container guide-section">
+            <div class="section-header">
+                <h2 class="section-title">购房指南与政策</h2>
+            </div>
+            <div class="guide-list">
+                <a href="#" class="guide-item">
+                    <div class="guide-text">
+                        <h3>2024年广州最新购房政策解读</h3>
+                        <p>首付比例、贷款利率及限购政策详细说明</p>
+                    </div>
+                    <div class="guide-arrow">→</div>
+                </a>
+                <a href="#" class="guide-item">
+                    <div class="guide-text">
+                        <h3>如何辨别花都楼盘销售资质</h3>
+                        <p>查看五证一书，避免购买违规期房</p>
+                    </div>
+                    <div class="guide-arrow">→</div>
+                </a>
+                <a href="#" class="guide-item">
+                    <div class="guide-text">
+                        <h3>花都二手房交易注意事项</h3>
+                        <p>查档、过户、税费计算及交房验收指南</p>
+                    </div>
+                    <div class="guide-arrow">→</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>花都房产网专注于为广州花都区的购房者提供真实、及时的楼盘信息与购房服务。我们致力于打造本地最专业的房产资讯平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门服务</h4>
+                    <ul>
+                        <li><a href="#">新房咨询</a></li>
+                        <li><a href="#">二手房买卖</a></li>
+                        <li><a href="#">房屋租赁</a></li>
+                        <li><a href="#">房价评估</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>购房帮助</h4>
+                    <ul>
+                        <li><a href="#">购房流程</a></li>
+                        <li><a href="#">贷款计算器</a></li>
+                        <li><a href="#">小区评测</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：020-12345678</li>
+                        <li>邮箱：contact@huadufang.com</li>
+                        <li>地址：广州市花都区新华街道</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 花都房产网 版权所有 | 本站信息仅供参考，具体以售楼处为准</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
